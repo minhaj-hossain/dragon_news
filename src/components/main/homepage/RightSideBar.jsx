@@ -1,7 +1,11 @@
+
 import React from 'react';
 import { FaFacebookF, FaGithub, FaGoogle, FaInstagram, FaTwitter } from 'react-icons/fa';
 
-const RightSideBar = () => {
+const RightSideBar =  () => {
+
+
+
     return (
         <div className='space-y-10'>
             <div>
