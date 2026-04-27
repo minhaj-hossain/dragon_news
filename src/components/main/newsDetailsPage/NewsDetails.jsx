@@ -1,4 +1,7 @@
+import { Button } from "@heroui/react";
 import Image from "next/image";
+import Link from "next/link";
+import { BiLeftArrow } from "react-icons/bi";
 import { FaEye, FaStar } from "react-icons/fa";
 
 export default function NewsDetails({ news }) {
@@ -10,6 +13,7 @@ export default function NewsDetails({ news }) {
         rating,
         author,
         others_info,
+        category_id
     } = news;
 
     return (
@@ -55,7 +59,7 @@ export default function NewsDetails({ news }) {
                     alt={title}
                     width={1200}
                     height={600}
-                    className="w-full h-[420px] object-cover rounded-xl"
+                    className="w-full h-105 object-cover rounded-xl"
                 />
             </div>
 
@@ -65,7 +69,7 @@ export default function NewsDetails({ news }) {
             </div>
 
             {/* Footer stats */}
-            <div className="flex items-center justify-between mt-10 pt-6 border-t">
+            <div className="flex items-center justify-between my-10 pt-6 border-t">
                 <div className="flex items-center gap-2 text-orange-500">
                     <FaStar />
                     <span className="font-semibold text-gray-800">
@@ -78,6 +82,8 @@ export default function NewsDetails({ news }) {
                     <span>{total_view} views</span>
                 </div>
             </div>
+
+            <Link className="" href={`/category/${category_id}`}><Button className={'bg-red-500 rounded-md '}> <BiLeftArrow /> All news in this category</Button></Link>
         </div>
     );
 }
